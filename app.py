@@ -166,7 +166,7 @@ if st.button("Get Recommendations"):
 
         elif predicted_disease:
             if predicted_disease == "Urinary tract infection":
-                query = f"you are the medical expert and you want to Explain the disease: {predicted_disease} in short concise. Also suggest description,medications,precautions,diet,workout, in short and effective answer title must be in bold and big letters ."
+                query = f"you are the medical expert and you want to Explain the disease:{', '.join(user_symptoms)}  in short concise. Also suggest description,medications,precautions,diet,workout, in short and effective answer title must be in bold and big letters ."
                 gemini_output = query_gemini(query)
                 st.info("📡 Here's what an AI medical assistant says:")
                 st.write(gemini_output)
